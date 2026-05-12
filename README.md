@@ -15,7 +15,7 @@ The working loop is:
 - `LEARNER_SUMMARY.md`: living document tracking knowledge state, strengths, weaknesses, and progress across all attempts.
 - `protocols/`: LLM workflows for marking attempts and generating question sheets.
 - `scripts/`: utilities for generating attempts and aggregating marks.
-- `LOG.csv`: running log of all marking events, appended to automatically by `summarise_attempt_marks.py`.
+- `LOG.csv`: running log of all marking events, appended to automatically by `finalise_attempt.py`.
 - `resources/`: source documents and reference material.
 
 ## Current Module
@@ -33,13 +33,13 @@ python3 scripts/create_blank_attempt.py modules/01-governance/questions/01-core-
 Aggregate marks for an attempt and write the result block:
 
 ```bash
-python3 scripts/summarise_attempt_marks.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md
+python3 scripts/finalise_attempt.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md
 ```
 
 Preview the current result without editing:
 
 ```bash
-python3 scripts/summarise_attempt_marks.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md --check
+python3 scripts/finalise_attempt.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md --check
 ```
 
 Extract a clean base question sheet from an answered attempt:

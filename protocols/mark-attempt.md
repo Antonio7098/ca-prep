@@ -18,7 +18,7 @@ Use this when an LLM is asked to mark an attempt file.
 5. For each question, edit only the feedback and marks block unless the user explicitly asks for model answers.
 6. Award marks out of 5 using the rubric below.
 7. Be strict about enterprise relevance, not just generic AI knowledge.
-8. Run `python3 scripts/summarise_attempt_marks.py <attempt-file>` after marking to update the total result. This automatically appends a row to `LOG.csv` at the project root with the timestamp, module, sheet, attempt number, marks, and percentage.
+8. Run `python3 scripts/finalise_attempt.py <attempt-file>` after marking to update the total result. This automatically appends a row to `LOG.csv` at the project root with the timestamp, module, sheet, attempt number, marks, and percentage.
 9. Update `LEARNER_SUMMARY.md` to reflect the new attempt. The overview stats and quantitative progress table are updated automatically by the script — do not edit them manually. You are responsible for the qualitative sections only:
    - Refresh the knowledge state by topic based on the new results.
    - Update recurring weaknesses, learning habits, and growth trend.
