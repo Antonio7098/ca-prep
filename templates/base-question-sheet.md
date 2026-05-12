@@ -8,7 +8,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 - Area: {{AREA}}
 - Difficulty: {{DIFFICULTY}}
 - Focus: {{FOCUS}}
-- Source notes: `modules/{{MODULE_SLUG}}/study-notes.md`
+- Handbook: `modules/{{MODULE_SLUG}}/{{MODULE_SLUG}}-handbook.md`
 
 ---
 
@@ -22,6 +22,8 @@ Use this sheet for active recall, interview preparation, and practical business 
 {{ANSWER}}
 ```
 
+**Marks: /{{MAX_MARKS}}**
+
 ---
 
 ### 2. {{QUESTION}}
@@ -30,9 +32,14 @@ Use this sheet for active recall, interview preparation, and practical business 
 {{ANSWER}}
 ```
 
+**Marks: /{{MAX_MARKS}}**
+
 ---
 
 ### 3. {{QUESTION}}
 
 ```
 {{ANSWER}}
+```
+
+**Marks: /{{MAX_MARKS}}

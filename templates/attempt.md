@@ -6,7 +6,7 @@
 - Sheet: {{SHEET_ID}}
 - Attempt: {{ATTEMPT_NUMBER}}
 - Date: {{YYYY_MM_DD}}
-- Source notes: `modules/{{MODULE_SLUG}}/study-notes.md`
+- Handbook: `modules/{{MODULE_SLUG}}/{{MODULE_SLUG}}-handbook.md`
 
 ---
 
@@ -23,6 +23,11 @@
 ```
 
 **Feedback:**
+
+> **Strengths:**
 > 
+> **Missing / Incorrect:**
+> 
+> **Next Step:**
 
 **Marks: /5**

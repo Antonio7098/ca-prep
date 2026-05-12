@@ -4,9 +4,9 @@ Use this when an LLM is asked to mark an attempt file.
 
 ## Inputs
 
-- Module notes: `modules/<module>/study-notes.md`
-- Base question sheet: `modules/<module>/questions/<sheet>/base.md`
-- Attempt file: `modules/<module>/questions/<sheet>/attempts/attempt-N.md`
+- Module notes: `modules/<num>-<module>/<num>-<module>-handbook.md`
+- Base question sheet: `modules/<num>-<module>/questions/<num>-<descriptive-sheet-name>/base.md`
+- Attempt file: `modules/<num>-<module>/questions/<num>-<descriptive-sheet-name>/attempts/attempt-N.md`
 
 ## Required Process
 
@@ -27,13 +27,18 @@ Use this when an LLM is asked to mark an attempt file.
 - 1/5: Minimal correct content.
 - 0/5: Incorrect, blank, or not answering the question.
 
-## Feedback Style
+## Feedback Requirements
 
-- Start with the strongest useful observation.
-- Name the missing concepts directly.
-- Prefer concise correction over long explanation.
-- When useful, mention how to phrase the answer in an HSBC or regulated-enterprise context.
+Each feedback block must include exactly these three elements, in order:
+
+1. **Strengths** – One sentence naming what was handled well (or "The answer addresses the core question but…" if partial).
+2. **Gap Analysis** – Name missing or incorrect concepts directly. Reference the relevant handbook section heading(s) so the learner knows exactly where to re-read.
+3. **Actionable Direction** – One concrete suggestion the learner can apply next attempt (e.g. "Cover cloud resilience patterns from §Cloud Architecture", "Provide a financial-services example").
+
+### Feedback Tone
+- Be direct, not dismissive.
 - Do not rewrite the learner's answer unless requested.
+- Use regulated-enterprise phrasing where applicable.
 
 ## Output Contract
 

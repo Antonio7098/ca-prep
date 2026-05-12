@@ -8,9 +8,9 @@ The working loop is:
 
 ## Structure
 
-- `modules/<module>/study-notes.md`: source notes for the module.
-- `modules/<module>/questions/<sheet>/base.md`: clean question sheet with no answers.
-- `modules/<module>/questions/<sheet>/attempts/attempt-N.md`: answer sheet with learner responses, feedback, marks, and total result.
+- `modules/<num>-<module>/<num>-<module>-handbook.md`: handbook for the module.
+- `modules/<num>-<module>/questions/<num>-<sheet>/base.md`: clean question sheet with no answers.
+- `modules/<num>-<module>/questions/<num>-<sheet>/attempts/attempt-N.md`: answer sheet with learner responses, feedback, marks, and total result.
 - `templates/`: reusable markdown templates for question sheets and attempts.
 - `protocols/`: LLM workflows for marking attempts and generating question sheets.
 - `scripts/`: utilities for generating attempts and aggregating marks.
@@ -18,32 +18,32 @@ The working loop is:
 
 ## Current Module
 
-- `governance`: AI governance, risk, responsible AI, EU AI Act, NIST AI RMF, security, enterprise operating models.
+- `01-governance`: AI governance, risk, responsible AI, EU AI Act, NIST AI RMF, security, enterprise operating models.
 
 ## Common Commands
 
 Create a blank attempt from a base question sheet:
 
 ```bash
-python3 scripts/create_blank_attempt.py modules/governance/questions/sheet-1/base.md modules/governance/questions/sheet-1/attempts/attempt-2.md
+python3 scripts/create_blank_attempt.py modules/01-governance/questions/01-core-concepts/base.md
 ```
 
 Aggregate marks for an attempt and write the result block:
 
 ```bash
-python3 scripts/summarise_attempt_marks.py modules/governance/questions/sheet-1/attempts/attempt-1.md
+python3 scripts/summarise_attempt_marks.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md
 ```
 
 Preview the current result without editing:
 
 ```bash
-python3 scripts/summarise_attempt_marks.py modules/governance/questions/sheet-1/attempts/attempt-1.md --check
+python3 scripts/summarise_attempt_marks.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md --check
 ```
 
 Extract a clean base question sheet from an answered attempt:
 
 ```bash
-python3 scripts/extract_base_from_attempt.py modules/governance/questions/sheet-1/attempts/attempt-1.md modules/governance/questions/sheet-1/base.md
+python3 scripts/extract_base_from_attempt.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md modules/01-governance/questions/01-core-concepts/base.md
 ```
 
 ## LLM Workflows
@@ -54,7 +54,7 @@ Use `protocols/generate-question-sheet.md` when asking an LLM to generate a new 
 
 ## Planned Modules
 
-- `governance`: AI governance, responsible AI, model risk, data governance, EU AI Act, NIST AI RMF.
+- `01-governance`: AI governance, responsible AI, model risk, data governance, EU AI Act, NIST AI RMF.
 - `commercialisation`: AI opportunity identification, ROI, adoption, pilots, stakeholder mapping.
 - `banking-operations`: KYC, AML, onboarding, compliance, fraud, document workflows, contact centres.
 - `enterprise-delivery`: pilot-to-production, approvals, rollout, vendor selection, adoption, controls.
