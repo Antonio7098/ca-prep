@@ -7,16 +7,24 @@ Use this when an LLM is asked to mark an attempt file.
 - Module notes: `modules/<num>-<module>/<num>-<module>-handbook.md`
 - Base question sheet: `modules/<num>-<module>/questions/<num>-<descriptive-sheet-name>/base.md`
 - Attempt file: `modules/<num>-<module>/questions/<num>-<descriptive-sheet-name>/attempts/attempt-N.md`
+- Learner summary: `LEARNER_SUMMARY.md`
 
 ## Required Process
 
 1. Read the module notes first. Treat them as the marking source of truth unless the user provides newer source material.
 2. Read the base sheet to understand the intended scope of each question.
-3. Read the attempt and mark each answer independently.
-4. For each question, edit only the feedback and marks block unless the user explicitly asks for model answers.
-5. Award marks out of 5 using the rubric below.
-6. Be strict about enterprise relevance, not just generic AI knowledge.
-7. Run `python3 scripts/summarise_attempt_marks.py <attempt-file>` after marking to update the total result.
+3. Read the learner summary to understand the learner's knowledge state, recurring weaknesses, and progress trajectory.
+4. Read the attempt and mark each answer independently.
+5. For each question, edit only the feedback and marks block unless the user explicitly asks for model answers.
+6. Award marks out of 5 using the rubric below.
+7. Be strict about enterprise relevance, not just generic AI knowledge.
+8. Run `python3 scripts/summarise_attempt_marks.py <attempt-file>` after marking to update the total result.
+9. Update `LEARNER_SUMMARY.md` to reflect the new attempt:
+   - Add the new attempt to the quantitative progress table.
+   - Update cumulative totals.
+   - Refresh the knowledge state by topic based on the new results.
+   - Update recurring weaknesses, learning habits, and growth trend.
+   - Bump the "Last updated" date.
 
 ## Marking Rubric
 
