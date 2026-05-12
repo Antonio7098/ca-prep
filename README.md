@@ -15,7 +15,7 @@ The working loop is:
 - `LEARNER_SUMMARY.md`: living document tracking knowledge state, strengths, weaknesses, and progress across all attempts.
 - `protocols/`: LLM workflows for marking attempts and generating question sheets.
 - `scripts/`: utilities for generating attempts and aggregating marks.
-- `LOG.csv`: running log of all marking events, appended to automatically by `finalise_attempt.py`.
+- `LOG.csv`: running log of all marking events, appended to automatically by `ca-prep finalise`.
 - `resources/`: source documents and reference material.
 
 ## Current Module
@@ -27,25 +27,25 @@ The working loop is:
 Create a blank attempt from a base question sheet:
 
 ```bash
-python3 scripts/create_blank_attempt.py modules/01-governance/questions/01-core-concepts/base.md
+ca-prep create modules/01-governance/questions/01-core-concepts/base.md
 ```
 
 Aggregate marks for an attempt and write the result block:
 
 ```bash
-python3 scripts/finalise_attempt.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md
+ca-prep finalise modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md
 ```
 
 Preview the current result without editing:
 
 ```bash
-python3 scripts/finalise_attempt.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md --check
+ca-prep finalise modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md --check
 ```
 
 Extract a clean base question sheet from an answered attempt:
 
 ```bash
-python3 scripts/extract_base_from_attempt.py modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md modules/01-governance/questions/01-core-concepts/base.md
+ca-prep extract modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md modules/01-governance/questions/01-core-concepts/base.md
 ```
 
 ## LLM Workflows

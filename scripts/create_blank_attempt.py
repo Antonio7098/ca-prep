@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Create a blank attempt file from a base question sheet.
 
-Usage: python3 scripts/create_blank_attempt.py <base.md>
+Usage: ca-prep create <base.md>
 
 Auto-detects the attempts/ directory and next attempt number.
 """

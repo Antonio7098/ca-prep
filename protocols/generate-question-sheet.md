@@ -25,7 +25,7 @@ Use this when an LLM is asked to generate a new base question sheet.
 7. Save the result as `modules/<num>-<module>/questions/<num>-<descriptive-sheet-name>/base.md`.
    - **Use descriptive kebab-case sheet names** that reflect the section content (e.g. `core-concepts`, `risk-and-failure-modes`, `eu-ai-act`, `trustworthy-ai`). Never use generic names like `sheet-1` or `questions-set`.
    - The name should make it immediately obvious what topic the sheet covers.
-8. If the user wants an attempt file, run `python3 scripts/create_blank_attempt.py <base.md>`. The script auto-detects the attempts directory and next attempt number.
+8. If the user wants an attempt file, run `ca-prep create <base.md>`. The script auto-detects the attempts directory and next attempt number.
 
 ## Question Design Guidance
 
