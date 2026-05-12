@@ -215,4 +215,3 @@ The model may not be properly evaluated or understood. It could contain bias, be
 - Marked questions: 15
 - Total marks: 39/75
 - Percentage: 52.0%
-

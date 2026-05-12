@@ -15,6 +15,7 @@ The working loop is:
 - `LEARNER_SUMMARY.md`: living document tracking knowledge state, strengths, weaknesses, and progress across all attempts.
 - `protocols/`: LLM workflows for marking attempts and generating question sheets.
 - `scripts/`: utilities for generating attempts and aggregating marks.
+- `LOG.csv`: running log of all marking events, appended to automatically by `summarise_attempt_marks.py`.
 - `resources/`: source documents and reference material.
 
 ## Current Module
