@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ca-prep"
 version = "0.1.0"
-description = "CA exam preparation workflow CLI"
+description = "Commercial Analyst role preparation workflow CLI"
 requires-python = ">=3.10"
 
 [tool.setuptools.packages.find]
