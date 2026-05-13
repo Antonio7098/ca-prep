@@ -23,6 +23,25 @@ Use this when an LLM is asked to mark an attempt file.
    - Refresh the knowledge state by topic based on the new results.
    - Update recurring weaknesses, learning habits, and growth trend.
    - Bump the "Last updated" date.
+10. Commit and push all changes. The commit message must follow this format:
+
+    ```
+    mark <module>/<sheet> attempt <N>: <score>/<total> (<percentage>)
+
+    Attempt metadata captured in LOG.csv. LEARNER_SUMMARY.md updated with
+    refreshed knowledge state, weaknesses, and growth trends.
+    ```
+
+    Example for a governance core-concepts attempt scoring 28/50 (56%):
+
+    ```
+    mark governance/01-core-concepts attempt 1: 28/50 (56%)
+
+    Attempt metadata captured in LOG.csv. LEARNER_SUMMARY.md updated with
+    refreshed knowledge state, weaknesses, and growth trends.
+    ```
+
+    Use `git add` to stage the attempt file, LOG.csv, and LEARNER_SUMMARY.md. Do not stage unrelated files.
 
 ## Marking Rubric
 
