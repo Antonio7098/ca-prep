@@ -2,3 +2,4 @@ timestamp,module,question_sheet,attempt_number,attempt_file,total_marks,percenta
 2026-05-12 16:19:46,governance,{{SHEET_ID}},1,modules/01-governance/questions/02-risk-and-failure-modes/attempts/02-risk-and-failure-modes-attempt-1.md,39/75,52.0,15
 2026-05-12 16:19:53,01-governance,01-core-concepts,1,modules/01-governance/questions/01-core-concepts/attempts/01-core-concepts-attempt-1.md,28/50,56.0,10
 2026-05-12 16:23:33,01-governance,01-core-concepts,1,modules/01-governance/questions/01-core-concepts/attempts/01-core-concepts-attempt-1.md,28/50,56.0,10
+2026-05-13 13:35:42,governance,trustworthy-ai,1,modules/01-governance/questions/03-trustworthy-ai/attempts/03-trustworthy-ai-attempt-1.md,20/33,60.6,10
