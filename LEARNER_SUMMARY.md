@@ -9,6 +9,7 @@ A living document tracking knowledge state, patterns, and progress across all CA
 - **Module in progress:** `01-governance` (AI Governance & Risk Management)
 - **Sheets completed:** 2 of 12
 - **Total attempts:** 2
+- **Answer structure target:** D-E-C-A (Define → Elaborate → Concrete example → Apply/Implications)
 
 ---
 
@@ -60,17 +61,19 @@ A living document tracking knowledge state, patterns, and progress across all CA
 
 ## Recurring Weaknesses
 
-1. **Brevity** — Most answers are 1-2 sentences. Feedback consistently says "could be more specific", "missing detail", "too vague". This is the single largest source of lost marks.
+1. **Missing D-E-C-A structure** — Answers typically stop at **D**efine (1 sentence) and skip **E**laborate (sub-types), **C**oncrete example, and **A**pply/implications. This single pattern accounts for nearly all lost marks.
 
-2. **No enterprise grounding** — Answers are conceptually right but lack operational/commercial specificity (e.g. "perform badly" instead of naming specific outcomes like system downtime, customer-facing failures, regulatory non-compliance).
+2. **Brevity** — Most answers are 1-2 sentences. Feedback consistently says "could be more specific", "missing detail", "too vague". This is the single largest source of lost marks.
 
-3. **Incomplete enumeration** — When asked for types/risks/categories, lists are partial (e.g. 5 of 9 business risks, vague on reputational risks).
+3. **No enterprise grounding** — Answers are conceptually right but lack operational/commercial specificity (e.g. "perform badly" instead of naming specific outcomes like system downtime, customer-facing failures, regulatory non-compliance).
 
-4. **Skipping unfamiliar questions** — Two blank answers (0/10 marks lost). Tendency to abandon rather than attempt partial reasoning.
+4. **Incomplete enumeration** — When asked for types/risks/categories, lists are partial (e.g. 5 of 9 business risks, vague on reputational risks).
 
-5. **No regulatory framework recall** — Rarely references EU AI Act, NIST AI RMF, FCA, ECB, GDPR unless the question explicitly names them.
+5. **Skipping unfamiliar questions** — Two blank answers (0/10 marks lost). Tendency to abandon rather than attempt partial reasoning.
 
-6. **Spelling errors** — Persistent: *surounding, innacurate, oganisations, maliscious, poisons, cannot explin, oversignt, ect*. Indicates no proofreading pass.
+6. **No regulatory framework recall** — Rarely references EU AI Act, NIST AI RMF, FCA, ECB, GDPR unless the question explicitly names them.
+
+7. **Spelling errors** — Persistent: *surounding, innacurate, oganisations, maliscious, poisons, cannot explin, oversignt, ect*. Indicates no proofreading pass.
 
 ---
 
@@ -82,16 +85,31 @@ A living document tracking knowledge state, patterns, and progress across all CA
 - No evidence of handbook cross-reference during answering
 - No proofreading step before submission
 - Abandons hard questions rather than attempting partial credit
+- Consistently stops at **D**efine, skipping **E**laborate, **C**oncrete example, and **A**pply — this is the primary habit to change
 
 ---
 
 ## Recommended Focus Areas for Next Attempts
 
-1. **Depth over breadth** — Write 3-5 sentences per answer. Always include: definition, mechanism/example, and enterprise implication.
-2. **Proofread** — Read answers out loud before submitting. Fix spelling, typos, and incomplete sentences.
-3. **Always attempt** — Even uncertain answers can score 1-2/5. Blanks score 0.
-4. **Cite the handbook** — Reference specific sections, regulatory frameworks, and named concepts from the handbook.
-5. **Add enterprise context unprompted** — Connect every concept to banking operations, regulated environments, or commercial implications.
+### Primary: D-E-C-A Answering Framework
+
+Use this mental model for every question. Write one short paragraph covering all 4 layers:
+
+| Layer | What to do | Checklist question |
+|---|---|---|
+| **D**efine | One accurate sentence defining the concept | *Have I stated what it is?* |
+| **E**laborate | List sub-types, dimensions, or categories from the handbook | *Have I enumerated the specific types/components?* |
+| **C**oncrete example | One real-world enterprise scenario | *Can I give a specific situation where this plays out?* |
+| **A**pply / Implications | Connect to business outcome — legal, reputational, regulatory, operational | *Why does this matter in an enterprise?* |
+
+**Habit to build:** Before submitting, check each answer for all 4 layers. If any is missing, add it before moving on.
+
+### Secondary Habits
+
+1. **Proofread** — Read answers out loud before submitting. Fix spelling, typos, and incomplete sentences.
+2. **Always attempt** — Even uncertain answers can score 1-2/5 with D-E-C-A. Blanks score 0.
+3. **Cite the handbook** — Reference specific sections, regulatory frameworks, and named concepts from the handbook.
+4. **Add enterprise context unprompted** — Connect every concept to banking operations, regulated environments, or commercial implications.
 
 ---
 
