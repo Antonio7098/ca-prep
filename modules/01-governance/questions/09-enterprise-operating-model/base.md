@@ -22,7 +22,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /4**
+**Total Marks: 4**
 
 ---
 
@@ -32,7 +32,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /3**
+**Total Marks: 3**
 
 ---
 
@@ -42,7 +42,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /3**
+**Total Marks: 3**
 
 ---
 
@@ -52,7 +52,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /3**
+**Total Marks: 3**
 
 ---
 
@@ -62,7 +62,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /3**
+**Total Marks: 3**
 
 ---
 
@@ -72,7 +72,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /4**
+**Total Marks: 4**
 
 ---
 
@@ -82,7 +82,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /4**
+**Total Marks: 4**
 
 ---
 
@@ -92,7 +92,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /3**
+**Total Marks: 3**
 
 ---
 
@@ -102,7 +102,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /3**
+**Total Marks: 3**
 
 ---
 
@@ -112,7 +112,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /4**
+**Total Marks: 4**
 
 ---
 
@@ -122,7 +122,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /3**
+**Total Marks: 3**
 
 ---
 
@@ -132,7 +132,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /3**
+**Total Marks: 3**
 
 ---
 
@@ -142,7 +142,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /4**
+**Total Marks: 4**
 
 ---
 
@@ -152,7 +152,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /3**
+**Total Marks: 3**
 
 ---
 
@@ -162,4 +162,4 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ```
 
-**Marks: /4**
+**Total Marks: 4**

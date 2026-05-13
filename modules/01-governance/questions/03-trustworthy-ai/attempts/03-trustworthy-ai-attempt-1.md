@@ -1,16 +1,15 @@
-# Enterprise AI Governance & Commercialisation — Trustworthy AI
+# Enterprise AI Governance & Commercialisation — Trustworthy AI - Attempt 1
 
-Use this sheet for active recall, interview preparation, and practical business judgement.
-
-## Sheet Metadata
+## Attempt Metadata
 
 - Module: governance
-- Area: trustworthy-ai
-- Difficulty: medium
-- Focus: nist trustworthiness principles
+- Sheet: trustworthy-ai
+- Attempt: 1
+- Date: 2026_05_13
 - Handbook: `modules/01-governance/01-governance-handbook.md`
 
 ---
+
 
 # SECTION 1 — Trustworthy AI
 
@@ -18,7 +17,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 1. What characteristics define trustworthy AI according to NIST?
 
-```
+```markdown
 
 ```
 
@@ -28,7 +27,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 2. Why must trustworthy AI be explainable?
 
-```
+```markdown
 
 ```
 
@@ -38,7 +37,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 3. What does privacy-enhancing AI mean?
 
-```
+```markdown
 
 ```
 
@@ -48,7 +47,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 4. Why is fairness critical in enterprise AI systems?
 
-```
+```markdown
 
 ```
 
@@ -58,7 +57,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 5. What is the relationship between transparency and trust?
 
-```
+```markdown
 
 ```
 
@@ -68,7 +67,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 6. Why must AI systems be resilient?
 
-```
+```markdown
 
 ```
 
@@ -78,7 +77,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 7. Why is accountability necessary for trustworthy AI?
 
-```
+```markdown
 
 ```
 
@@ -88,7 +87,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 8. What does validity and reliability mean in AI systems?
 
-```
+```markdown
 
 ```
 
@@ -98,7 +97,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 9. Why is safety considered a trustworthiness requirement?
 
-```
+```markdown
 
 ```
 
@@ -108,7 +107,7 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 10. How can organizations operationalize fairness?
 
-```
+```markdown
 
 ```
 

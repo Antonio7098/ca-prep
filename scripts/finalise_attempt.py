@@ -11,6 +11,9 @@ from pathlib import Path
 
 
 MARK_RE = re.compile(r"\*\*Marks:\s*(\d+(?:\.\d+)?)\s*/\s*(\d+(?:\.\d+)?)\*\*", re.IGNORECASE)
+CORRECTION_RE = re.compile(r"\*\*Correction:\*\*")
+QUESTION_HEADING_RE = re.compile(r"^### (\d+)\.", re.MULTILINE)
+BASE_SECTION_RE = re.compile(r"\n---\n")
 RESULT_RE = re.compile(
     r"\n---\n\n## Attempt Result\n\n.*?(?=\n---\n\n#|\Z)",
     re.DOTALL,
@@ -27,10 +30,51 @@ PROGRESS_SECTION_RE = re.compile(
 )
 
 
+def find_base_sheet(attempt_path: Path) -> Path | None:
+    base = attempt_path.parent.parent / "base.md"
+    return base if base.is_file() else None
+
+
+def extract_base_answers(base_text: str) -> dict[int, str]:
+    answers = {}
+    for section in BASE_SECTION_RE.split(base_text):
+        qm = QUESTION_HEADING_RE.search(section)
+        if not qm:
+            continue
+        q_num = int(qm.group(1))
+        cm = re.search(r"```\n(.*?)\n```", section, re.DOTALL)
+        if cm:
+            answers[q_num] = cm.group(1).strip()
+    return answers
+
+
+def add_corrections(text: str, base_text: str) -> str:
+    answers = extract_base_answers(base_text)
+    if not answers:
+        return text
+
+    def repl(m: re.Match) -> str:
+        before = text[: m.start()]
+        qms = list(QUESTION_HEADING_RE.finditer(before))
+        if not qms:
+            return m.group(0)
+        answer = answers.get(int(qms[-1].group(1)))
+        if not answer:
+            return m.group(0)
+        after = text[m.end() : m.end() + 200]
+        if CORRECTION_RE.search(after):
+            return m.group(0)
+        return f"{m.group(0)}\n\n**Correction:**\n```markdown\n{answer}\n```"
+
+    return MARK_RE.sub(repl, text)
+
+
 def find_project_root(path: Path) -> Path:
     for parent in path.parents:
-        if (parent / "README.md").exists():
+        if (parent / "README.md").is_file():
             return parent
+    import warnings
+    warnings.warn("Could not find project root (no README.md in parent chain). Falling back to current directory.")
     return Path.cwd()
 
 
@@ -95,7 +139,9 @@ def result_block(text: str) -> tuple[str, dict]:
     return block, result_data
 
 
-def update_attempt(text: str) -> tuple[str, dict]:
+def update_attempt(text: str, base_text: str | None = None) -> tuple[str, dict]:
+    if base_text:
+        text = add_corrections(text, base_text)
     block, result_data = result_block(text)
     if RESULT_RE.search(text):
         return RESULT_RE.sub(block, text).rstrip() + "\n", result_data
@@ -182,12 +228,32 @@ def main() -> None:
     parser.add_argument("--check", action="store_true", help="Print the result block without editing the file.")
     args = parser.parse_args()
 
-    text = args.attempt.read_text(encoding="utf-8")
-    updated, result_data = update_attempt(text)
+    if not args.attempt.is_file():
+        raise SystemExit(f"Attempt file not found: {args.attempt}")
+
+    try:
+        text = args.attempt.read_text(encoding="utf-8")
+    except PermissionError:
+        raise SystemExit(f"Permission denied reading: {args.attempt}")
+    except UnicodeDecodeError:
+        raise SystemExit(f"File is not valid UTF-8: {args.attempt}")
+
+    base_text = None
+    base_path = find_base_sheet(args.attempt)
+    if base_path:
+        base_text = base_path.read_text(encoding="utf-8")
+
+    updated, result_data = update_attempt(text, base_text)
     if args.check:
         print(result_block(text)[0].strip())
         return
-    args.attempt.write_text(updated, encoding="utf-8")
+
+    try:
+        args.attempt.write_text(updated, encoding="utf-8")
+    except PermissionError:
+        raise SystemExit(f"Permission denied writing: {args.attempt}")
+    except OSError as e:
+        raise SystemExit(f"Failed to write {args.attempt}: {e}")
 
     root = find_project_root(args.attempt)
     log_to_csv(root / "LOG.csv", args.attempt, text, result_data)

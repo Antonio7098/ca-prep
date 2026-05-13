@@ -12,11 +12,11 @@ Use this when an LLM is asked to mark an attempt file.
 ## Required Process
 
 1. Read the module notes first. Treat them as the marking source of truth unless the user provides newer source material.
-2. Read the base sheet to understand the intended scope of each question.
+2. Read the base sheet to understand the intended scope of each question and its **Mark Scheme** (criteria breakdown). Use the mark scheme as the primary reference for what each answer must cover to earn full marks.
 3. Read the learner summary to understand the learner's knowledge state, recurring weaknesses, and progress trajectory.
 4. Read the attempt and mark each answer independently.
-5. For each question, edit only the feedback and marks block unless the user explicitly asks for model answers.
-6. Award marks out of 5 using the rubric below.
+5. For each question, edit only the feedback and marks block unless the user explicitly asks for model answers. The blank attempt contains no **Feedback:** section — you must add it. It also contains a **Total Marks:** line showing the denominator — change it to **Marks: X/N** with the score you award. Do NOT add a **Correction:** section (it is inserted by `ca-prep finalise` from the base sheet answers).
+6. Award marks against the Mark Scheme in the base sheet. Each criterion is worth 1 mark; the total equals the denominator shown in **Marks: X/N**.
 7. Be strict about enterprise relevance, not just generic AI knowledge.
 8. Run `ca-prep finalise <attempt-file>` after marking to update the total result. This automatically appends a row to `LOG.csv` at the project root with the timestamp, module, sheet, attempt number, marks, and percentage.
 9. Update `LEARNER_SUMMARY.md` to reflect the new attempt. The overview stats and quantitative progress table are updated automatically by the script — do not edit them manually. You are responsible for the qualitative sections only:
@@ -43,14 +43,16 @@ Use this when an LLM is asked to mark an attempt file.
 
     Use `git add` to stage the attempt file, LOG.csv, and LEARNER_SUMMARY.md. Do not stage unrelated files.
 
-## Marking Rubric
+## Marking Rubric (Proportional)
 
-- 5/5: Accurate, complete, specific, and commercially/operationally relevant.
-- 4/5: Mostly correct with one meaningful omission or weak example.
-- 3/5: Partially correct but generic, incomplete, or missing enterprise implications.
-- 2/5: Some relevant ideas but important misconceptions or major omissions.
-- 1/5: Minimal correct content.
-- 0/5: Incorrect, blank, or not answering the question.
+The rubric below scales to any denominator. For a question worth N marks, map the fraction earned to the closest grade:
+
+- **N/N**: Accurate, complete, specific, and commercially/operationally relevant.
+- **~(N-1)/N**: Mostly correct with one meaningful omission or weak example.
+- **~N/2**: Partially correct but generic, incomplete, or missing enterprise implications.
+- **< N/2**: Some relevant ideas but important misconceptions or major omissions.
+- **1/N**: Minimal correct content.
+- **0/N**: Incorrect, blank, or not answering the question.
 
 ## Feedback Requirements
 
@@ -67,7 +69,19 @@ Each feedback block must include exactly these three elements, in order:
 
 ## Output Contract
 
-The attempt file should retain this repeated structure:
+The blank attempt starts with this structure per question:
+
+````markdown
+### N. Question text?
+
+```markdown
+
+```
+
+**Total Marks: N**
+````
+
+After the LLM marks, before `ca-prep finalise` adds the **Correction:** section:
 
 ````markdown
 ### N. Question text?
@@ -79,5 +93,14 @@ Learner answer.
 **Feedback:**
 > Concise feedback.
 
-**Marks: X/5**
+**Marks: X/N**
 ````
+
+After `ca-prep finalise` runs, the **Correction:** section is inserted from the base sheet answers:
+
+```markdown
+**Correction:**
+```markdown
+Model answer.
+```
+```

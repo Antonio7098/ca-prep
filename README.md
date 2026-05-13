@@ -9,7 +9,7 @@ The working loop is:
 ## Structure
 
 - `modules/<num>-<module>/<num>-<module>-handbook.md`: handbook for the module.
-- `modules/<num>-<module>/questions/<num>-<sheet>/base.md`: clean question sheet with no answers.
+- `modules/<num>-<module>/questions/<num>-<sheet>/base.md`: clean question sheet with mark scheme criteria per question and no answers.
 - `modules/<num>-<module>/questions/<num>-<sheet>/attempts/<num>-<sheet>-attempt-N.md`: answer sheet with learner responses, feedback, marks, and total result.
 - `templates/`: reusable markdown templates for question sheets and attempts.
 - `LEARNER_SUMMARY.md`: living document tracking knowledge state, strengths, weaknesses, and progress across all attempts.
@@ -27,7 +27,7 @@ The working loop is:
 Create a blank attempt from a base question sheet:
 
 ```bash
-ca-prep create modules/01-governance/questions/01-core-concepts/base.md
+ca-prep create modules/01-governance/questions/01-core-concepts
 ```
 
 Aggregate marks for an attempt and write the result block:
@@ -50,7 +50,7 @@ ca-prep extract modules/01-governance/questions/01-core-concepts/attempts/01-cor
 
 ## LLM Workflows
 
-Use `protocols/mark-attempt.md` when asking an LLM to mark an attempt. The LLM should read the module notes, base sheet, and learner summary first, edit feedback and marks in the attempt, run the mark aggregation script, then update the learner summary.
+Use `protocols/mark-attempt.md` when asking an LLM to mark an attempt. The LLM should read the module notes, base sheet (including its per-question Mark Scheme), and learner summary first, then edit feedback and marks in the attempt against the mark scheme criteria, run the mark aggregation script, and update the learner summary.
 
 Use `protocols/generate-question-sheet.md` when asking an LLM to generate a new question sheet from a module's notes and a requested area, difficulty, focus, or target role.
 

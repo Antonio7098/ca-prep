@@ -31,12 +31,26 @@ def main() -> None:
     parser.add_argument("--force", action="store_true", help="Overwrite output if it already exists.")
     args = parser.parse_args()
 
+    if not args.attempt.is_file():
+        raise SystemExit(f"Attempt file not found: {args.attempt}")
+
     if args.output.exists() and not args.force:
         raise SystemExit(f"Refusing to overwrite existing file: {args.output}. Use --force to replace it.")
 
-    text = args.attempt.read_text(encoding="utf-8")
+    try:
+        text = args.attempt.read_text(encoding="utf-8")
+    except PermissionError:
+        raise SystemExit(f"Permission denied reading: {args.attempt}")
+    except UnicodeDecodeError:
+        raise SystemExit(f"File is not valid UTF-8: {args.attempt}")
+
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(extract_base(text, args.title), encoding="utf-8")
+    try:
+        args.output.write_text(extract_base(text, args.title), encoding="utf-8")
+    except PermissionError:
+        raise SystemExit(f"Permission denied writing: {args.output}")
+    except OSError as e:
+        raise SystemExit(f"Failed to write {args.output}: {e}")
 
 
 if __name__ == "__main__":

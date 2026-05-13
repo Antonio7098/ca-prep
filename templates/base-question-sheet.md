@@ -18,28 +18,43 @@ Use this sheet for active recall, interview preparation, and practical business 
 
 ### 1. {{QUESTION}}
 
+**Mark Scheme:**
+- {{CRITERION_1}} — {{M1}} mark(s)
+- {{CRITERION_2}} — {{M2}} mark(s)
+- {{CRITERION_3}} — {{M3}} mark(s)
+
 ```
 {{ANSWER}}
 ```
 
-**Marks: /{{MAX_MARKS}}**
+**Total Marks: {{MAX_MARKS}}**
 
 ---
 
 ### 2. {{QUESTION}}
 
+**Mark Scheme:**
+- {{CRITERION_1}} — {{M1}} mark(s)
+- {{CRITERION_2}} — {{M2}} mark(s)
+- {{CRITERION_3}} — {{M3}} mark(s)
+
 ```
 {{ANSWER}}
 ```
 
-**Marks: /{{MAX_MARKS}}**
+**Total Marks: {{MAX_MARKS}}**
 
 ---
 
 ### 3. {{QUESTION}}
 
+**Mark Scheme:**
+- {{CRITERION_1}} — {{M1}} mark(s)
+- {{CRITERION_2}} — {{M2}} mark(s)
+- {{CRITERION_3}} — {{M3}} mark(s)
+
 ```
 {{ANSWER}}
 ```
 
-**Marks: /{{MAX_MARKS}}
+**Total Marks: {{MAX_MARKS}}

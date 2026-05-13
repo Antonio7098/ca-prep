@@ -22,12 +22,4 @@
 
 ```
 
-**Feedback:**
-
-> **Strengths:**
-> 
-> **Missing / Incorrect:**
-> 
-> **Next Step:**
-
-**Marks: /5**
+**Total Marks: {{MAX_MARKS}}**

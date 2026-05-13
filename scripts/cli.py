@@ -2,7 +2,7 @@
 """Unified CLI for CA exam preparation workflow.
 
 Usage:
-  ca-prep create <base.md>                    Create a blank attempt
+  ca-prep create [<path>]                     Create a blank attempt (auto-detects base.md)
   ca-prep extract <attempt.md> <output.md>    Extract base sheet from attempt
   ca-prep finalise <attempt.md>               Finalise an attempt (marks, log, summary)
 """
@@ -29,7 +29,7 @@ def main() -> None:
 
     # --- create ---
     create_p = sub.add_parser("create", help="Create a blank attempt from a base sheet.")
-    create_p.add_argument("base", type=Path, help="Path to the base question sheet.")
+    create_p.add_argument("base", nargs="?", type=Path, default=None, help="Path to the base question sheet or its directory. Defaults to auto-detecting base.md in the current directory.")
     create_p.add_argument("--force", action="store_true", help="Overwrite existing attempt.")
 
     # --- extract ---
@@ -47,7 +47,9 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.command == "create":
-        sys.argv = ["create_blank_attempt.py", str(args.base)]
+        sys.argv = ["create_blank_attempt.py"]
+        if args.base is not None:
+            sys.argv.append(str(args.base))
         if args.force:
             sys.argv.append("--force")
         create_main()
