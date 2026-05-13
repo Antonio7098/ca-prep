@@ -851,3 +851,15 @@ The long-term winners in AI will be organizations that can:
 * manage risk intelligently
 * maintain stakeholder trust
 * operationalize AI responsibly across the full lifecycle.
+
+---
+
+# References
+
+- The Importance of AI Governance — YouTube: <https://youtu.be/Q020C-Jw0o8>
+- Security & AI Governance: Reducing Risks in AI Systems — YouTube: <https://youtu.be/4QXtObc61Lw>
+- Mastering AI Risk: NIST's Risk Management Framework Explained — YouTube: <https://youtu.be/0oeD2Wf25wY>
+- What is Responsible AI? A Guide to AI Governance — YouTube: <https://youtu.be/yh-3WU1FKrk>
+- What is MLOps? — YouTube: <https://youtu.be/OejCJL2EC3k>
+- NIST AI RMF Resources: <https://airc.nist.gov/airmf-resources/>
+- EU Artificial Intelligence Act: <https://artificialintelligenceact.eu/>

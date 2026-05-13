@@ -29,6 +29,9 @@ def build_attempt(base_text: str, attempt_num: int) -> str:
     module_match = re.search(r"- Module: (.+)", base_text)
     module_slug = module_match.group(1).strip() if module_match else ""
 
+    area_match = re.search(r"- Area: (.+)", base_text)
+    area_slug = area_match.group(1).strip() if area_match else "unknown"
+
     handbook_match = re.search(r"- Handbook: `(.+?)`", base_text)
     handbook_path = handbook_match.group(1) if handbook_match else ""
 
@@ -39,13 +42,12 @@ def build_attempt(base_text: str, attempt_num: int) -> str:
 ## Attempt Metadata
 
 - Module: {module_slug}
-- Sheet: {{{{SHEET_ID}}}}
+- Sheet: {area_slug}
 - Attempt: {attempt_num}
 - Date: {today}
 - Handbook: `{handbook_path}`
 
 ---
-
 """
 
     # Extract section headers and questions from base
@@ -96,17 +98,19 @@ def main() -> None:
     if not args.base.exists():
         raise SystemExit(f"Base sheet not found: {args.base}")
 
+    sheet_dir_name = args.base.parent.name
     attempts_dir = args.base.parent / "attempts"
     attempts_dir.mkdir(parents=True, exist_ok=True)
 
-    existing = sorted(attempts_dir.glob("attempt-*.md"))
+    prefix = f"{sheet_dir_name}-attempt-"
+    existing = sorted(attempts_dir.glob(f"{prefix}*.md"))
     if existing:
-        last_num = max(int(f.stem.split("-")[1]) for f in existing if f.stem.count("-") == 1)
+        last_num = max(int(f.stem.split("-")[-1]) for f in existing if f.stem.count("-") >= 1)
         attempt_num = last_num + 1
     else:
         attempt_num = 1
 
-    output = attempts_dir / f"attempt-{attempt_num}.md"
+    output = attempts_dir / f"{prefix}{attempt_num}.md"
 
     if output.exists() and not args.force:
         raise SystemExit(

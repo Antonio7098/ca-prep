@@ -10,7 +10,7 @@ The working loop is:
 
 - `modules/<num>-<module>/<num>-<module>-handbook.md`: handbook for the module.
 - `modules/<num>-<module>/questions/<num>-<sheet>/base.md`: clean question sheet with no answers.
-- `modules/<num>-<module>/questions/<num>-<sheet>/attempts/attempt-N.md`: answer sheet with learner responses, feedback, marks, and total result.
+- `modules/<num>-<module>/questions/<num>-<sheet>/attempts/<num>-<sheet>-attempt-N.md`: answer sheet with learner responses, feedback, marks, and total result.
 - `templates/`: reusable markdown templates for question sheets and attempts.
 - `LEARNER_SUMMARY.md`: living document tracking knowledge state, strengths, weaknesses, and progress across all attempts.
 - `protocols/`: LLM workflows for marking attempts and generating question sheets.
@@ -33,19 +33,19 @@ ca-prep create modules/01-governance/questions/01-core-concepts/base.md
 Aggregate marks for an attempt and write the result block:
 
 ```bash
-ca-prep finalise modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md
+ca-prep finalise modules/01-governance/questions/01-core-concepts/attempts/01-core-concepts-attempt-1.md
 ```
 
 Preview the current result without editing:
 
 ```bash
-ca-prep finalise modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md --check
+ca-prep finalise modules/01-governance/questions/01-core-concepts/attempts/01-core-concepts-attempt-1.md --check
 ```
 
 Extract a clean base question sheet from an answered attempt:
 
 ```bash
-ca-prep extract modules/01-governance/questions/01-core-concepts/attempts/attempt-1.md modules/01-governance/questions/01-core-concepts/base.md
+ca-prep extract modules/01-governance/questions/01-core-concepts/attempts/01-core-concepts-attempt-1.md modules/01-governance/questions/01-core-concepts/base.md
 ```
 
 ## LLM Workflows

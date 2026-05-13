@@ -47,7 +47,7 @@ def parse_metadata(text: str) -> dict[str, str]:
 
 def scan_attempts(root: Path) -> list[dict]:
     entries: list[dict] = []
-    for path in sorted(root.glob("modules/*/questions/*/attempts/attempt-*.md")):
+    for path in sorted(root.glob("modules/*/questions/*/attempts/*-attempt-*.md")):
         try:
             text = path.read_text(encoding="utf-8")
         except Exception:
