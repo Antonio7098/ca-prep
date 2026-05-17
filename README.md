@@ -2,9 +2,19 @@
 
 Structured preparation for a Commercial Analyst role focused on enterprise AI, banking, governance, delivery, and executive communication.
 
-The working loop is:
+## How to Use
 
-> Learn -> Analyse -> Build -> Present
+1. **Create a module's study material** — prompt the coding agent with `@protocols/write-handbook.md` and pass in source documents or ask it to web-search. It will produce a structured handbook at `modules/<num>-<module>/<num>-<module>-handbook.md`.
+
+2. **Generate a question sheet** — prompt the coding agent with `@protocols/generate-question-sheet.md` and specify an area, difficulty, and focus. The sheet is saved at `modules/<num>-<module>/questions/<num>-<sheet-name>/base.md`. Run `ca-prep create <sheet-path>` to produce a blank attempt file.
+
+3. **Answer the questions** — fill in the attempt file by writing answers under each question block.
+
+4. **Mark the attempt** — prompt the coding agent with `@protocols/mark-attempt.md`. It reads the handbook, base sheet, and learner summary; adds feedback and marks to the attempt; then runs `ca-prep finalise` to aggregate marks and log the result.
+
+5. **Correct based on feedback** — after marking, `ca-prep finalise` inserts the model answer (Correction block) into the attempt. Review the feedback, update your knowledge in `@LEARNER_SUMMARY.md`, and study the gaps before the next sheet.
+
+Track long-term progress in `@LEARNER_SUMMARY.md`. See all past attempts in `@LOG.csv`.
 
 ## Structure
 
@@ -13,7 +23,7 @@ The working loop is:
 - `modules/<num>-<module>/questions/<num>-<sheet>/attempts/<num>-<sheet>-attempt-N.md`: answer sheet with learner responses, feedback, marks, and total result.
 - `templates/`: reusable markdown templates for question sheets and attempts.
 - `LEARNER_SUMMARY.md`: living document tracking knowledge state, strengths, weaknesses, and progress across all attempts.
-- `protocols/`: LLM workflows for marking attempts and generating question sheets.
+- `protocols/`: authoritative protocols for writing handbooks, generating question sheets, and marking attempts.
 - `scripts/`: utilities for generating attempts and aggregating marks.
 - `LOG.csv`: running log of all marking events, appended to automatically by `ca-prep finalise`.
 - `resources/`: source documents and reference material.
@@ -47,12 +57,6 @@ Extract a clean base question sheet from an answered attempt:
 ```bash
 ca-prep extract modules/01-governance/questions/01-core-concepts/attempts/01-core-concepts-attempt-1.md modules/01-governance/questions/01-core-concepts/base.md
 ```
-
-## LLM Workflows
-
-Use `protocols/mark-attempt.md` when asking an LLM to mark an attempt. The LLM should read the module notes, base sheet (including its per-question Mark Scheme), and learner summary first, then edit feedback and marks in the attempt against the mark scheme criteria, run the mark aggregation script, and update the learner summary.
-
-Use `protocols/generate-question-sheet.md` when asking an LLM to generate a new question sheet from a module's notes and a requested area, difficulty, focus, or target role.
 
 ## Planned Modules
 

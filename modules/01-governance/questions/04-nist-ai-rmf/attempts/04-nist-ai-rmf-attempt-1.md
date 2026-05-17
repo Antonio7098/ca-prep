@@ -18,7 +18,7 @@
 ### 1. What is the purpose of the NIST AI RMF?
 
 ```markdown
-
+The purpose of the NIST AI RMF is to provide detailed guidance as to how to implement ai. It is not a law, merely guidance. It details everything in the lifecycle fo a model from data cleaning to continuous monitoring.
 ```
 
 **Total Marks: 3**
@@ -28,7 +28,7 @@
 ### 2. Why is the framework voluntary yet still highly influential?
 
 ```markdown
-
+Although it is not enforced by law, it is a highly detailed operational framework designed to maximise responsible AI use. It is highly influential because it comes from NIST, a respected organisation, and is very thorough.
 ```
 
 **Total Marks: 3**
@@ -38,7 +38,10 @@
 ### 3. What are the four core functions of the AI RMF?
 
 ```markdown
-
+GOVERN: Set up the governance principles that will guide the project eg. accountability structures, 
+MAP: Understand the state of the project before starting eg. map stakeholders, requirements, 
+TEST: Set up robust testing and evaluation frameworks eg. 
+MONITOR: COntinuous monitoring to guard ageinst model drift, bias, bugs,
 ```
 
 **Total Marks: 4**
